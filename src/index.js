@@ -1,2 +1,9 @@
-import './css/fonts.css';
-import './css/styles.css'
+import RecipeFinder from './js/bs/recipeFinder'
+
+// Business logic
+
+export async function recipeFinder (ingredient){
+
+}
+
+// UI logic
