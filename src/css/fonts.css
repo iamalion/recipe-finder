@@ -1,0 +1,256 @@
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../assets/fonts/BebasNeue-Light.eot');
+    src: url('../assets/fonts/BebasNeue-Light.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/BebasNeue-Light.woff2') format('woff2'),
+        url('../assets/fonts/BebasNeue-Light.woff') format('woff'),
+        url('../assets/fonts/BebasNeue-Light.ttf') format('truetype'),
+        url('../assets/fonts/BebasNeue-Light.svg#BebasNeue-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bebas Neue Book';
+    src: url('../assets/fonts/BebasNeue-Book.eot');
+    src: url('../assets/fonts/BebasNeue-Book.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/BebasNeue-Book.woff2') format('woff2'),
+        url('../assets/fonts/BebasNeue-Book.woff') format('woff'),
+        url('../assets/fonts/BebasNeue-Book.ttf') format('truetype'),
+        url('../assets/fonts/BebasNeue-Book.svg#BebasNeue-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../assets/fonts/BebasNeue-Bold.eot');
+    src: url('../assets/fonts/BebasNeue-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/BebasNeue-Bold.woff2') format('woff2'),
+        url('../assets/fonts/BebasNeue-Bold.woff') format('woff'),
+        url('../assets/fonts/BebasNeue-Bold.ttf') format('truetype'),
+        url('../assets/fonts/BebasNeue-Bold.svg#BebasNeue-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../assets/fonts/BebasNeue-Thin.eot');
+    src: url('../assets/fonts/BebasNeue-Thin.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/BebasNeue-Thin.woff2') format('woff2'),
+        url('../assets/fonts/BebasNeue-Thin.woff') format('woff'),
+        url('../assets/fonts/BebasNeue-Thin.ttf') format('truetype'),
+        url('../assets/fonts/BebasNeue-Thin.svg#BebasNeue-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url('../assets/fonts/BebasNeue-Regular.eot');
+    src: url('../assets/fonts/BebasNeue-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/BebasNeue-Regular.woff2') format('woff2'),
+        url('../assets/fonts/BebasNeue-Regular.woff') format('woff'),
+        url('../assets/fonts/BebasNeue-Regular.ttf') format('truetype'),
+        url('../assets/fonts/BebasNeue-Regular.svg#BebasNeue-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'League Spartan';
+    src: url('../assets/fonts/LeagueSpartan-Bold.eot');
+    src: url('../assets/fonts/LeagueSpartan-Bold.eot?iefix') format('embedded-opentype'),
+        url('../assets/fonts/LeagueSpartan-Bold.woff2') format('woff2'),
+        url('../assets/fonts/LeagueSpartan-Bold.woff') format('woff'),
+        url('../assets/fonts/LeagueSpartan-Bold.ttf') format('truetype'),
+        url('../assets/fonts/LeagueSpartan-Bold.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'Muli';
+    src: url('../assets/fonts/Muli-Light.eot');
+    src: url('../assets/fonts/Muli-Light.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Muli-Light.woff2') format('woff2'),
+        url('../assets/fonts/Muli-Light.woff') format('woff'),
+        url('../assets/fonts/Muli-Light.ttf') format('truetype'),
+        url('../assets/fonts/Muli-Light.svg#Muli-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Muli';
+    src: url('../assets/fonts/Muli-Bold.eot');
+    src: url('../assets/fonts/Muli-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Muli-Bold.woff2') format('woff2'),
+        url('../assets/fonts/Muli-Bold.woff') format('woff'),
+        url('../assets/fonts/Muli-Bold.ttf') format('truetype'),
+        url('../assets/fonts/Muli-Bold.svg#Muli-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Muli';
+    src: url('../assets/fonts/Muli-Regular.eot');
+    src: url('../assets/fonts/Muli-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Muli-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Muli-Regular.woff') format('woff'),
+        url('../assets/fonts/Muli-Regular.ttf') format('truetype'),
+        url('../assets/fonts/Muli-Regular.svg#Muli-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url('../assets/fonts/NunitoSans-Regular.eot');
+    src: url('../assets/fonts/NunitoSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/NunitoSans-Regular.woff2') format('woff2'),
+        url('../assets/fonts/NunitoSans-Regular.woff') format('woff'),
+        url('../assets/fonts/NunitoSans-Regular.ttf') format('truetype'),
+        url('../assets/fonts/NunitoSans-Regular.svg#NunitoSans-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url('../assets/fonts/NunitoSans-Bold.eot');
+    src: url('../assets/fonts/NunitoSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/NunitoSans-Bold.woff2') format('woff2'),
+        url('../assets/fonts/NunitoSans-Bold.woff') format('woff'),
+        url('../assets/fonts/NunitoSans-Bold.ttf') format('truetype'),
+        url('../assets/fonts/NunitoSans-Bold.svg#NunitoSans-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url('../assets/fonts/NunitoSans-Light.eot');
+    src: url('../assets/fonts/NunitoSans-Light.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/NunitoSans-Light.woff2') format('woff2'),
+        url('../assets/fonts/NunitoSans-Light.woff') format('woff'),
+        url('../assets/fonts/NunitoSans-Light.ttf') format('truetype'),
+        url('../assets/fonts/NunitoSans-Light.svg#NunitoSans-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../assets/fonts/Oswald-Light.eot');
+    src: url('../assets/fonts/Oswald-Light.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Oswald-Light.woff2') format('woff2'),
+        url('../assets/fonts/Oswald-Light.woff') format('woff'),
+        url('../assets/fonts/Oswald-Light.ttf') format('truetype'),
+        url('../assets/fonts/Oswald-Light.svg#Oswald-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../assets/fonts/Oswald-Medium.eot');
+    src: url('../assets/fonts/Oswald-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Oswald-Medium.woff2') format('woff2'),
+        url('../assets/fonts/Oswald-Medium.woff') format('woff'),
+        url('../assets/fonts/Oswald-Medium.ttf') format('truetype'),
+        url('../assets/fonts/Oswald-Medium.svg#Oswald-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../assets/fonts/Oswald-ExtraLight.eot');
+    src: url('../assets/fonts/Oswald-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Oswald-ExtraLight.woff2') format('woff2'),
+        url('../assets/fonts/Oswald-ExtraLight.woff') format('woff'),
+        url('../assets/fonts/Oswald-ExtraLight.ttf') format('truetype'),
+        url('../assets/fonts/Oswald-ExtraLight.svg#Oswald-ExtraLight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../assets/fonts/Oswald-Regular.eot');
+    src: url('../assets/fonts/Oswald-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Oswald-Regular.woff2') format('woff2'),
+        url('../assets/fonts/Oswald-Regular.woff') format('woff'),
+        url('../assets/fonts/Oswald-Regular.ttf') format('truetype'),
+        url('../assets/fonts/Oswald-Regular.svg#Oswald-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../assets/fonts/Oswald-SemiBold.eot');
+    src: url('../assets/fonts/Oswald-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Oswald-SemiBold.woff2') format('woff2'),
+        url('../assets/fonts/Oswald-SemiBold.woff') format('woff'),
+        url('../assets/fonts/Oswald-SemiBold.ttf') format('truetype'),
+        url('../assets/fonts/Oswald-SemiBold.svg#Oswald-SemiBold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../assets/fonts/Oswald-Bold.eot');
+    src: url('../assets/fonts/Oswald-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Oswald-Bold.woff2') format('woff2'),
+        url('../assets/fonts/Oswald-Bold.woff') format('woff'),
+        url('../assets/fonts/Oswald-Bold.ttf') format('truetype'),
+        url('../assets/fonts/Oswald-Bold.svg#Oswald-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ovo';
+    src: url('../assets/fonts/Ovo.eot');
+    src: url('../assets/fonts/Ovo.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/Ovo.woff2') format('woff2'),
+        url('../assets/fonts/Ovo.woff') format('woff'),
+        url('../assets/fonts/Ovo.ttf') format('truetype'),
+        url('../assets/fonts/Ovo.svg#Ovo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ra Mono';
+    src: url('../assets/fonts/RaMonoRegular.eot');
+    src: url('../assets/fonts/RaMonoRegular.eot?#iefix') format('embedded-opentype'),
+        url('../assets/fonts/RaMonoRegular.woff2') format('woff2'),
+        url('../assets/fonts/RaMonoRegular.woff') format('woff'),
+        url('../assets/fonts/RaMonoRegular.ttf') format('truetype'),
+        url('../assets/fonts/RaMonoRegular.svg#RaMonoRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
