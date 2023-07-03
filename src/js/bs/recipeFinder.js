@@ -1,6 +1,7 @@
 export default class RecipeFinder {
     constructor(ingredient){
         this.ingredient = ingredient;
+        //this.recipeName = recipeName;
     }
     static async getRecipe(ingredient) {
         try {
