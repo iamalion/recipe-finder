@@ -6,20 +6,11 @@ export async function recipeFinder (ingredient){
     let response = await RecipeFinder.getRecipe(ingredient);
     if (response.results) {
         printElements(response, ingredient);
+        printIngredients(response, ingredient);
     } else {
         printError(response, ingredient);
     }
 }
-
-// UI Logic
-// function printElements(response, ingredient) {
-//     let output = `Here are some recipes using ${ingredient}: </br>`;
-//     response.results.forEach(recipe => {
-//         output += `<li><a href="#" onclick="printIngredients('${recipe.name}', '${recipe.ingredients}')">${recipe.name}</a></li>`;
-//     });
-//     output += '</ul>';
-//     document.getElementById("output").innerHTML = output;
-// }
 
 function printElements(response) {
     let displayOutput = document.querySelector("div#output");
@@ -34,25 +25,42 @@ function printElements(response) {
     displayOutput.append(ul);
 }
 
-
-
 // function printIngredients(response) {
-//     let output = `Ingredients list: `;
-//     response.results[0].sections[0].components[0].forEach(recipe => {
-//         output += `<li> ${recipe.raw_text}</li>`
-//     });
-//     output += '<ol> </ol>';
-//     document.getElementById("ingredients").innerHTML = output;
+//     const components = response.results[0].sections[0].components;
+//     const ul = document.createElement("ul");
+//     document.querySelector("li").addEventListener("click", components.forEach(function(component) {
+//         Object.keys(component).forEach(function(key) {
+//             const items = component[key];
+//             const li = document.createElement('li');
+//             li.append(items.raw_text);
+//             ul.append(li);
+//         });
+//         document.getElementById("ingredients").innerText = components.raw_text;
+//     })); 
 // }
 
-// function displayContactDetails(event) {
-//     const contact = addressBook.findContact(event.target.id);
-//     document.querySelector(".first-name").innerText = contact.firstName;
-//     document.querySelector(".last-name").innerText = contact.lastName;
-//     document.querySelector(".phone-number").innerText = contact.phoneNumber;
-//     document.querySelector("button.delete").setAttribute("id", contact.id);
-//     document.querySelector("div#contact-details").removeAttribute("class");
-//   }
+function printIngredients(response) {
+    const sections = response.results[0].sections;
+    const ul = document.createElement("ul");
+    document.querySelector("li").addEventListener("click", function () {
+        sections.forEach(function (section) {
+            const components = section.components;
+  
+            components.forEach(function (component) {
+                const ingredient = component.raw_text;
+                const li = document.createElement("li");
+                li.append(ingredient);
+                ul.append(li);
+            });         
+        });
+    });
+  
+    document.getElementById("ingredients").innerText = "";
+    document.getElementById("ingredients").append(ul);
+
+    // Append the <ul> element to the "ingredients" element
+    document.getElementById("ingredients").appendChild(ul);
+}
 
 
 function printError(response, ingredient) {
@@ -67,5 +75,5 @@ function formSubmission(event) {
 }
 
 window.addEventListener("load", function() {
-    this.document.querySelector("form").addEventListener("submit", formSubmission);
+    document.querySelector("form").addEventListener("submit", formSubmission);
 });
