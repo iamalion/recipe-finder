@@ -5,8 +5,8 @@ import RecipeFinder from './js/bs/recipeFinder';
 
 // Business Logic
 
-export async function recipeFinder (ingredient){
-    let response = await RecipeFinder.getRecipe(ingredient);
+export async function recipeFinder (ingredient, tag1, tag2){
+    let response = await RecipeFinder.getRecipe(ingredient, tag1, tag2);
     if (response.results) {
         printElements(response, ingredient);
     } else {
@@ -72,14 +72,13 @@ function printError(response, ingredient) {
 function formSubmission(event) {
     event.preventDefault();
     let ingredient = document.getElementById("ingredient1").value;
-    recipeFinder(ingredient);
+    let tag1 = document.getElementById("cuisine").value;
+    recipeFinder(ingredient, tag1);
     document.getElementById("ingredient1").value = "";
     document.getElementById("ingredients").innerHTML = null;
     document.getElementById("instructions").innerHTML = null;
+    document.getElementById("cuisine").value = null;
 }
-
-
-
 
 window.addEventListener("load", function() {
     document.querySelector("form").addEventListener("submit", formSubmission);

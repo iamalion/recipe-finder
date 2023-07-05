@@ -11,13 +11,48 @@
         <button id="light-mode-button">Light</button>
     </div>
     <h1>Recipe Finder</h1>
-    <p>Enter any ingredient to find several recipes to make!</p>
+    <p>Enter any ingredient(s) to find several recipes to make!</p>
     <form>
-        <label for="ingredient1">Ingredient:</label>
-        <input type="text" id="ingredient1" required>
+        <div class="formDiv1">
+            <label for="ingredient1">Ingredient(s):</label>
+            <input type="text" id="ingredient1" required>
+        </br>
+        <label>Pick a cuisine type:
+            <select id="cuisine">
+                <option value="cuisine">Any</option>
+                <option value="north_american">North American</option>
+                <option value="british">British</option>
+                <option value="italian">Italian</option>
+                <option value="mexican">Mexican</option>
+                <option value="middle_eastern">Middle Eastern</option>
+                <option value="french">French</option>
+                <option value="chinese">Chinese</option>
+                <option value="japanese">Japanese</option>
+                <option value="thai">Thai</option>
+                <option value="fusion">Fusion</option>
+            </select>
+        </label>
+        </br>
+        <div id="diet">
+            <label>
+                <input type="checkbox" value="vegetarian">
+                Vegetarian
+            </label>
+            <label>
+                <input type="checkbox" value="gluten_free">
+                Gluten-free
+            </label>
+            <label>
+                <input type="checkbox" value="low_carb">
+                Low-carb
+            </label>
+        </div>
+        </div>
+            <div class="buttonDiv"> 
         <button type="sumbit">Find Recipes</button>
+        </div>
     </form>
-    <div id="output"></div>
+    <div id="output" class="center"></div>
     <div id="ingredients" class="hidden"></div>
     <div id="instructions" class="hidden"></div>    
 </body>

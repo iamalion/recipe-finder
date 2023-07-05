@@ -4,12 +4,21 @@
 
 body {
     font-family: Arial, sans-serif; 
-    margin: 0;
+    margin: 10;
     padding: 20px;
     background-color: whitesmoke;
     color: black;
 }
 
+.dark-mode {
+    background-color: black;
+    color: whitesmoke;
+}
+
+.light-mode {
+    background-color: white;
+    color: black;
+}
 h1, p {
     text-align:center;
     margin-bottom: 10px
@@ -22,26 +31,45 @@ form {
 
 input {
     padding: 3px;
-    width: 200px
+    width: auto;
 }
 
-.dark-mode {
-    background-color: black;
-    color: whitesmoke;
+#cuisine {
+    width: auto;
+    margin-top: 20px;
 }
 
-.light-mode {
-    background-color: white;
-    color: black;
+#diet {
+    margin-top: 20px;
+}
+
+.center{
+    text-align: center;
+    list-style-position: inside;
+}
+
+#output ul {
+    padding-left: 0px;
+}
+
+li {
+    margin: 10px 0;
+}
+
+li:hover {
+    cursor: pointer;
 }
 
 div#buttons {
     border: none;
     padding: 4px;
-    display: inline-block;
-    margin: 10px;
-    background-color: rgb(25, 2, 25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(76, 72, 76);
     border-radius: 10px;
+    max-width: 160px;
+    margin: auto;
 }
 
 button {
@@ -55,6 +83,10 @@ button {
     cursor: pointer;
 }
 
-li:hover {
-    cursor: pointer;
+#ingredients {
+    margin-left: 20vw;
+}
+
+#instructions {
+    margin-left: 20vw;
 }

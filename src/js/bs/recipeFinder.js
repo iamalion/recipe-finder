@@ -2,10 +2,10 @@ export default class RecipeFinder {
     constructor(ingredients){
         this.ingredients = ingredients;
     }
-    static async getRecipe(ingredient) {
+    static async getRecipe(ingredient, tag1) {
         try {
             const response = await fetch(
-                `https://tasty.p.rapidapi.com/recipes/list?q=${ingredient}&from=0&size=5`, {
+                `https://tasty.p.rapidapi.com/recipes/list?q=${ingredient}&from=0&size=5&tags=${tag1}`, {
                     headers: {
                         'X-RapidAPI-Key': `${process.env.API_KEY}`
                     }
