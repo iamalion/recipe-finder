@@ -1,5 +1,5 @@
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import RecipeFinder from './js/bs/recipeFinder';
 
@@ -25,6 +25,7 @@ async function printElements(response) {
         li.append(recipeName.name);
         li.addEventListener("click", function () {
             printIngredients(response, recipeName.name);
+            printInstructions(response, recipeName.name);
         });
         ul.append(li);
     });
@@ -44,11 +45,25 @@ async function printIngredients(response, recipeName) {
             ul.append(li);
         });
     });
-    document.getElementById("ingredients").innerText = "";
+    document.getElementById("ingredients").innerHTML = `<h3>Ingredients:</h3>`;
     document.getElementById("ingredients").appendChild(ul);
     document.getElementById("ingredients").removeAttribute("class", "hidden");         
 }
 
+async function printInstructions(response, recipeName) {
+    const selectedRecipe = response.results.find(recipe => recipe.name === recipeName);
+    const instructions = await selectedRecipe.instructions;
+    const ul = document.createElement("ul");
+    instructions.forEach(function (instruction) {
+        const step = instruction.display_text;
+        let li = document.createElement("li");
+        li.append(step);
+        ul.append(li);
+    });
+    document.getElementById("instructions").innerHTML = `<h3>Instructions:</h3>`;
+    document.getElementById("instructions").appendChild(ul);
+    document.getElementById("instructions").removeAttribute("class", "hidden");         
+}
 
 function printError(response, ingredient) {
     document.getElementById("output").innerHTML = `There was an error finding recipes for ${ingredient}, ${response.status}`;
@@ -62,21 +77,23 @@ function formSubmission(event) {
 }
 
 
+
+
 window.addEventListener("load", function() {
     document.querySelector("form").addEventListener("submit", formSubmission);
-
-    // const darkModeButton = document.getElementById("dark-mode-button");
-    // const lightModeButton = document.getElementById("light-mode-button");
-    // const body = document.querySelector("body");
-    
-    // darkModeButton.addEventListener("click", function() {
-    //     body.setAttribute("class", "dark-mode");
-    //     body.removeAttribute("class", "light-mode");
-    // });
-
-    // lightModeButton.addEventListener("click", function() {
-    //     body.removeAttribute("class", "dark-mode");
-    //     body.setAttribute("class", "light-mode");
-    // });
+  
+    const darkModeButton = document.getElementById("dark-mode-button");
+    const lightModeButton = document.getElementById("light-mode-button");
+    const body = document.querySelector("body");
+  
+    darkModeButton.addEventListener("click", function() {
+        body.classList.add("dark-mode");
+        body.classList.remove("light-mode");
+    });
+  
+    lightModeButton.addEventListener("click", function() {
+        body.classList.remove("dark-mode");
+        body.classList.add("light-mode");
+    });
 
 });
