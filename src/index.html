@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Finder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Poppins:wght@200;400&display=swap" rel="stylesheet">
+    <title>Pantry Pal</title>
 </head>
 <body>
     <div id="recipe-finder">
@@ -11,12 +14,14 @@
             <button id="dark-mode-button">Dark</button>
             <button id="light-mode-button">Light</button>
         </div>
-        <h1>Recipe Finder</h1>
-        <p>Enter any ingredient(s) to find several recipes to make!</p>
+        <h1 class="message">&#127860; Pantry Pal &#127860;</h1>
+        <div class="intro">
+            <p>Introducing Pantry Pal! Revolutionize your kitchen adventures with our app that helps you discover new, tailored recipes. Enter your ingredients, select cuisine type, and apply dietary filters for a curated selection of dishes. Unleash your creativity, transform everyday ingredients into extraordinary meals, and let Pantry Pal be your trusted culinary companion.</p>
+        </div>
         <form>
             <div class="formDiv1">
                 <label for="ingredient1">Ingredient(s):</label>
-                <input type="text" id="ingredient1" required>
+                <input type="text" id="ingredient1" placeholder="enter ingredient(s) with a space between each" required>
             </br>
             <label>Pick a cuisine type:
                 <select id="cuisine">
@@ -37,24 +42,24 @@
             <div id="dietDiv">
                 <label>
                     <input type="checkbox" id="tag2" value="vegetarian" name="diet">
-                    Vegetarian
+                    Vegetarian &#127793;
                 </label>
                 <label>
                     <input type="checkbox" id="tag3" value="gluten_free" name="diet">
-                    Gluten-free
+                    Gluten-free &#129364;
                 </label>
                 <label>
                     <input type="checkbox" id="tag4" value="low_carb" name="diet">
-                    Low-carb
+                    Low-carb &#129362;
                 </label>
             </div>
             </div>
                 <div class="buttonDiv"> 
-            <button type="sumbit">Find Recipes</button>
+            <button type="sumbit">Find Recipes</button> &#x1F50D;
             </div>
         </form>
-        <div id="recipe-output" class="center"></div>
-        <div id="ingred-instruct">
+        <div id="recipe-output" class="center, hidden"></div>
+        <div id="ingred-instruct" class="hidden">
             <div id="ingredients" class="hidden"></div>
             <div id="instructions" class="hidden"></div>
         </div>

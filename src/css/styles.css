@@ -3,30 +3,56 @@
 }
 
 body {
-    font-family: Arial, sans-serif; 
+    font-family: 'Exo 2', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16pt;
+    font-weight: bold;
     margin: 10;
     padding: 20px;
-    background-color: whitesmoke;
+    background-color: #6bb059;
     color: black;
 }
 
 .dark-mode {
-    background-color: black;
-    color: whitesmoke;
+    background-color: #36562d;
+    color: rgb(255, 255, 255);
 }
 
 .light-mode {
-    background-color: white;
+    background-color: #6bb059;
     color: black;
 }
+
+
+h1 {
+    text-transform: uppercase;
+}
+
 h1, p {
     text-align:center;
     margin-bottom: 10px
 }
 
+.intro {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow:  #313131 0px 10px 20px;
+    background-color: #559A65;
+}
+
 form { 
     margin-top: 20px;
     text-align: center;
+    background-color: #559A65;
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow:  #313131 0px 10px 20px;
 }
 
 input {
@@ -39,8 +65,12 @@ input {
     margin-top: 20px;
 }
 
-#diet {
+#dietDiv {
     margin-top: 20px;
+}
+
+#ingredient1 {
+    width: 275px;
 }
 
 .center{
@@ -68,6 +98,10 @@ div#buttons {
     margin: auto;
 }
 
+#buttonDiv {
+    margin-top: 20px;
+}
+
 button {
     border-radius: 5px;
     border: none;
@@ -86,19 +120,43 @@ button {
 }
 
 #ingred-instruct {
+    font-weight: bold;
     width:65%;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 10px;
+    box-shadow:  #313131 0px 10px 20px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #559A65;
 }
 
-/* #ingredients {
-    margin-left: 20vw;
+#recipe-output {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #559A65;
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 20px;
+    list-style-position: inside;
+    box-shadow:  #313131 0px 10px 20px;
 }
-
-#instructions {
-    margin-left: 20vw;
-} */
 
 #recipe-output ul {
     padding-left: 0px;
+}
+
+#ingredients {
+    border-bottom: 2px solid black;
+}
+
+@keyframes scale {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.message {
+    animation: scale 0.5s ease-in-out;
 }

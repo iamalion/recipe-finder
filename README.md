@@ -2,8 +2,6 @@
 
 By: Casey Hill, Joshua Khan, Eva Kemp, Shanay Mohamed, Lindsay Warr
 
-Template repo for Node.js project with Webpack, ESLint, Babel, and Jest.
-
 <!-- View on [Github Pages](https://username.github.io/repo-name/) -->
 
 ## **Technologies Used**
@@ -19,6 +17,7 @@ Template repo for Node.js project with Webpack, ESLint, Babel, and Jest.
 
 ## **Description**
 
+_Takes user inputs for ingredients
 
 ## **Complete Setup**
 

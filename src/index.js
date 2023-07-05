@@ -45,9 +45,10 @@ async function printIngredients(response, recipeName) {
             ul.append(li);
         });
     });
-    document.getElementById("ingredients").innerHTML = `<h3>Ingredients:</h3>`;
+    document.getElementById("ingredients").innerHTML = `<h3><strong>Ingredients:</strong></h3>`;
     document.getElementById("ingredients").appendChild(ul);
-    document.getElementById("ingredients").removeAttribute("class", "hidden");         
+    document.getElementById("ingred-instruct").removeAttribute("class", "hidden");
+    document.getElementById("ingredients").removeAttribute("class", "hidden");        
 }
 
 async function printInstructions(response, recipeName) {
@@ -60,7 +61,7 @@ async function printInstructions(response, recipeName) {
         li.append(step);
         ol.append(li);
     });
-    document.getElementById("instructions").innerHTML = `<h3>Instructions:</h3>`;
+    document.getElementById("instructions").innerHTML = `<h3><strong>Instructions:</strong></h3>`;
     document.getElementById("instructions").appendChild(ol);
     document.getElementById("instructions").removeAttribute("class", "hidden");         
 }
@@ -73,6 +74,7 @@ function printError(response, ingredient) {
 
 function formSubmission(event) {
     event.preventDefault();
+    document.getElementById("recipe-output").removeAttribute("class", "hidden"); 
     let ingredient = document.getElementById("ingredient1").value;
     let checkedTags = [];
     let tags = document.querySelectorAll("input[name=diet]:checked");
@@ -87,6 +89,7 @@ function formSubmission(event) {
     document.getElementById("ingredients").innerHTML = null;
     document.getElementById("instructions").innerHTML = null;
     document.getElementById("cuisine").value = null;
+    document.querySelector("form").reset();
 }
 
 window.addEventListener("load", function() {
@@ -107,18 +110,3 @@ window.addEventListener("load", function() {
     });
 
 });
-
-
-// const tags = document.querySelectorAll("input[name=diet]:checked")
-
-
-// function getSelectedToppings() {
-//     const checkboxes = document.querySelectorAll('input[name="topping"]:checked');
-//     let selectedToppings = [];
-
-//     checkboxes.forEach(function (checkbox) {
-//         selectedToppings.push(checkbox.value);
-//     });
-
-//     return selectedToppings;
-// }
