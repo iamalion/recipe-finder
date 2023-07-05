@@ -53,15 +53,15 @@ async function printIngredients(response, recipeName) {
 async function printInstructions(response, recipeName) {
     const selectedRecipe = response.results.find(recipe => recipe.name === recipeName);
     const instructions = await selectedRecipe.instructions;
-    const ul = document.createElement("ul");
+    const ol = document.createElement("ol");
     instructions.forEach(function (instruction) {
         const step = instruction.display_text;
         let li = document.createElement("li");
         li.append(step);
-        ul.append(li);
+        ol.append(li);
     });
     document.getElementById("instructions").innerHTML = `<h3>Instructions:</h3>`;
-    document.getElementById("instructions").appendChild(ul);
+    document.getElementById("instructions").appendChild(ol);
     document.getElementById("instructions").removeAttribute("class", "hidden");         
 }
 
@@ -74,6 +74,8 @@ function formSubmission(event) {
     let ingredient = document.getElementById("ingredient1").value;
     recipeFinder(ingredient);
     document.getElementById("ingredient1").value = "";
+    document.getElementById("ingredients").innerHTML = null;
+    document.getElementById("instructions").innerHTML = null;
 }
 
 
