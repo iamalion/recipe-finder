@@ -1,6 +1,6 @@
 import RecipeFinder from './js/bs/recipeFinder';
 
-// Business logic
+// Business Logic
 
 export async function recipeFinder (ingredient){
     let response = await RecipeFinder.getRecipe(ingredient);
@@ -12,6 +12,8 @@ export async function recipeFinder (ingredient){
     }
 }
 
+
+// UI Logic
 function printElements(response) {
     let displayOutput = document.querySelector("div#output");
     displayOutput.innerText = null;
@@ -25,41 +27,25 @@ function printElements(response) {
     displayOutput.append(ul);
 }
 
-// function printIngredients(response) {
-//     const components = response.results[0].sections[0].components;
-//     const ul = document.createElement("ul");
-//     document.querySelector("li").addEventListener("click", components.forEach(function(component) {
-//         Object.keys(component).forEach(function(key) {
-//             const items = component[key];
-//             const li = document.createElement('li');
-//             li.append(items.raw_text);
-//             ul.append(li);
-//         });
-//         document.getElementById("ingredients").innerText = components.raw_text;
-//     })); 
-// }
 
 function printIngredients(response) {
     const sections = response.results[0].sections;
     const ul = document.createElement("ul");
-    document.querySelector("li").addEventListener("click", function () {
-        sections.forEach(function (section) {
-            const components = section.components;
-  
-            components.forEach(function (component) {
-                const ingredient = component.raw_text;
-                const li = document.createElement("li");
-                li.append(ingredient);
-                ul.append(li);
-            });         
+    sections.forEach(function (section) {
+        const components = section.components;
+        components.forEach(function (component) {
+            const ingredient = component.raw_text;
+            const li = document.createElement("li");
+            li.append(ingredient);
+            ul.append(li);
         });
     });
-  
-    document.getElementById("ingredients").innerText = "";
-    document.getElementById("ingredients").append(ul);
-
-    // Append the <ul> element to the "ingredients" element
-    document.getElementById("ingredients").appendChild(ul);
+    document.querySelector("li").addEventListener("click", function () {
+        document.getElementById("ingredients").innerText = "";
+        document.getElementById("ingredients").append(ul);
+        document.getElementById("ingredients").appendChild(ul);
+        document.getElementById("ingredients").removeAttribute("class", "hidden");
+    });         
 }
 
 
