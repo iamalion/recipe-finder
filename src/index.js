@@ -1,3 +1,6 @@
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/styles.css';
 import RecipeFinder from './js/bs/recipeFinder';
 
 // Business Logic
@@ -6,14 +9,13 @@ export async function recipeFinder (ingredient){
     let response = await RecipeFinder.getRecipe(ingredient);
     if (response.results) {
         printElements(response, ingredient);
-        printIngredients(response, ingredient);
     } else {
         printError(response, ingredient);
     }
 }
 
 // UI Logic
-function printElements(response) {
+async function printElements(response) {
     let displayOutput = document.querySelector("div#output");
     displayOutput.innerText = null;
     const ul = document.createElement("ul");
@@ -29,9 +31,9 @@ function printElements(response) {
     displayOutput.append(ul);
 }
 
-function printIngredients(response, recipeName) {
+async function printIngredients(response, recipeName) {
     const selectedRecipe = response.results.find(recipe => recipe.name === recipeName);
-    const sections = selectedRecipe.sections;
+    const sections = await selectedRecipe.sections;
     const ul = document.createElement("ul");
     sections.forEach(function (section) {
         const components = section.components;
@@ -59,6 +61,22 @@ function formSubmission(event) {
     document.getElementById("ingredient1").value = "";
 }
 
+
 window.addEventListener("load", function() {
     document.querySelector("form").addEventListener("submit", formSubmission);
+
+    // const darkModeButton = document.getElementById("dark-mode-button");
+    // const lightModeButton = document.getElementById("light-mode-button");
+    // const body = document.querySelector("body");
+    
+    // darkModeButton.addEventListener("click", function() {
+    //     body.setAttribute("class", "dark-mode");
+    //     body.removeAttribute("class", "light-mode");
+    // });
+
+    // lightModeButton.addEventListener("click", function() {
+    //     body.removeAttribute("class", "dark-mode");
+    //     body.setAttribute("class", "light-mode");
+    // });
+
 });
