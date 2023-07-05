@@ -12,7 +12,6 @@ export async function recipeFinder (ingredient){
     }
 }
 
-
 // UI Logic
 function printElements(response) {
     let displayOutput = document.querySelector("div#output");
@@ -22,30 +21,30 @@ function printElements(response) {
         const recipeName = response.results[key];
         const li = document.createElement('li');
         li.append(recipeName.name);
+        li.addEventListener("click", function () {
+            printIngredients(response, recipeName.name);
+        });
         ul.append(li);
     });
     displayOutput.append(ul);
 }
 
-
-function printIngredients(response) {
-    const sections = response.results[0].sections;
+function printIngredients(response, recipeName) {
+    const selectedRecipe = response.results.find(recipe => recipe.name === recipeName);
+    const sections = selectedRecipe.sections;
     const ul = document.createElement("ul");
     sections.forEach(function (section) {
         const components = section.components;
         components.forEach(function (component) {
             const ingredient = component.raw_text;
-            const li = document.createElement("li");
+            let li = document.createElement("li");
             li.append(ingredient);
             ul.append(li);
         });
     });
-    document.querySelector("li").addEventListener("click", function () {
-        document.getElementById("ingredients").innerText = "";
-        document.getElementById("ingredients").append(ul);
-        document.getElementById("ingredients").appendChild(ul);
-        document.getElementById("ingredients").removeAttribute("class", "hidden");
-    });         
+    document.getElementById("ingredients").innerText = "";
+    document.getElementById("ingredients").appendChild(ul);
+    document.getElementById("ingredients").removeAttribute("class", "hidden");         
 }
 
 
@@ -57,7 +56,7 @@ function formSubmission(event) {
     event.preventDefault();
     let ingredient = document.getElementById("ingredient1").value;
     recipeFinder(ingredient);
-    ingredient = null;
+    document.getElementById("ingredient1").value = "";
 }
 
 window.addEventListener("load", function() {
