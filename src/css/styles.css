@@ -48,10 +48,6 @@ input {
     list-style-position: inside;
 }
 
-#output ul {
-    padding-left: 0px;
-}
-
 li {
     margin: 10px 0;
 }
@@ -83,10 +79,26 @@ button {
     cursor: pointer;
 }
 
-#ingredients {
+#recipe-finder {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#ingred-instruct {
+    width:65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* #ingredients {
     margin-left: 20vw;
 }
 
 #instructions {
     margin-left: 20vw;
+} */
+
+#recipe-output ul {
+    padding-left: 0px;
 }

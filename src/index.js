@@ -5,18 +5,18 @@ import RecipeFinder from './js/bs/recipeFinder';
 
 // Business Logic
 
-export async function recipeFinder (ingredient, tag1, tag2){
-    let response = await RecipeFinder.getRecipe(ingredient, tag1, tag2);
+export async function recipeFinder (ingredient, tags, cuisine){
+    let response = await RecipeFinder.getRecipe(ingredient, tags, cuisine);
     if (response.results) {
-        printElements(response, ingredient);
+        printElements(response, ingredient, tags);
     } else {
-        printError(response, ingredient);
+        printError(response, ingredient, tags);
     }
 }
 
 // UI Logic
 async function printElements(response) {
-    let displayOutput = document.querySelector("div#output");
+    let displayOutput = document.querySelector("div#recipe-output");
     displayOutput.innerText = null;
     const ul = document.createElement("ul");
     Object.keys(response.results).forEach(function(key) {
@@ -66,14 +66,23 @@ async function printInstructions(response, recipeName) {
 }
 
 function printError(response, ingredient) {
-    document.getElementById("output").innerHTML = `There was an error finding recipes for ${ingredient}, ${response.status}`;
+    document.getElementById("recipe-output").innerHTML = `There was an error finding recipes for ${ingredient}, ${response.status}`;
 }
+
+
 
 function formSubmission(event) {
     event.preventDefault();
     let ingredient = document.getElementById("ingredient1").value;
-    let tag1 = document.getElementById("cuisine").value;
-    recipeFinder(ingredient, tag1);
+    let checkedTags = [];
+    let tags = document.querySelectorAll("input[name=diet]:checked");
+    let cuisine = document.getElementById("cuisine").value;
+    
+    tags.forEach(function(tag) {
+        checkedTags.push(tag.value);
+    });
+    
+    recipeFinder(ingredient, checkedTags, cuisine);
     document.getElementById("ingredient1").value = "";
     document.getElementById("ingredients").innerHTML = null;
     document.getElementById("instructions").innerHTML = null;
@@ -98,3 +107,18 @@ window.addEventListener("load", function() {
     });
 
 });
+
+
+// const tags = document.querySelectorAll("input[name=diet]:checked")
+
+
+// function getSelectedToppings() {
+//     const checkboxes = document.querySelectorAll('input[name="topping"]:checked');
+//     let selectedToppings = [];
+
+//     checkboxes.forEach(function (checkbox) {
+//         selectedToppings.push(checkbox.value);
+//     });
+
+//     return selectedToppings;
+// }
