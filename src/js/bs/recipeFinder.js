@@ -15,11 +15,12 @@ export default class RecipeFinder {
             );
             const jsonifiedResponse = await response.json();
             if (!response.ok) {
-                throw new Error("No recipes found");
+                let errorMessage = `${response.status} ${response.statusText} ${jsonifiedResponse.message}`;
+                throw new Error(errorMessage);
             }
             return jsonifiedResponse;
         } catch (error) {
-            throw new Error(`Error accessing the data: ${error}`);
+            return error;
         }
     }
 }

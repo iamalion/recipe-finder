@@ -5,9 +5,11 @@ import RecipeFinder from './js/bs/recipeFinder';
 
 // Business Logic
 
-export async function recipeFinder (ingredient, tags, cuisine){
+export async function recipeFinder (ingredient, tags, cuisine) {
     let response = await RecipeFinder.getRecipe(ingredient, tags, cuisine);
-    if (response.results) {
+    if (response.count === 0) {
+        noResults();
+    } else if (response.results) {
         printElements(response, ingredient, tags);
     } else {
         printError(response, ingredient, tags);
@@ -66,11 +68,13 @@ async function printInstructions(response, recipeName) {
     document.getElementById("instructions").removeAttribute("class", "hidden");         
 }
 
-function printError(response, ingredient) {
-    document.getElementById("recipe-output").innerHTML = `There was an error finding recipes for ${ingredient}, ${response.status}`;
+function printError(error) {
+    document.getElementById("recipe-output").innerHTML = `There was an error with the request: ${error.message}`;
 }
 
-
+function noResults () {
+    document.getElementById("recipe-output").innerText = "No recipes match that description";
+}
 
 function formSubmission(event) {
     event.preventDefault();
