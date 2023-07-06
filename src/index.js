@@ -1,11 +1,9 @@
-// import 'bootstrap';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import RecipeFinder from './js/bs/recipeFinder';
 
 // Business Logic
 
-export async function recipeFinder (ingredient, tags, cuisine) {
+async function recipeFinder (ingredient, tags, cuisine) {
     let response = await RecipeFinder.getRecipe(ingredient, tags, cuisine);
     if (response.count === 0) {
         noResults();

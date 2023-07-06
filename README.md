@@ -82,6 +82,8 @@ If the program does not run, try the following:
 
 ## **Known Bugs**
 -   some ingredients listed as n/a
+-   wrong error message when searching a conflicting ingredient and dietary type without cuisine type (chicken, any, vegetarian)
+-   ingred/instruct div appears even if no recipes match description
 
 ## **License**
 
